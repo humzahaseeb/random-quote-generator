@@ -37,6 +37,7 @@ const QuoteCard = () => {
         style={{display: 'flex',
                 justifyContent:'center',
               }}
+        id="quote-box"
       >
         <Card
             sx={{
@@ -47,15 +48,20 @@ const QuoteCard = () => {
             variant="outlined"
         >
         <CardContent>
-            <Typography>
+            <Typography id='text'>
                 {quote}
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography variant="h5" component="div" id='author'>
                 {author}
             </Typography>
         </CardContent>
         <CardActions>
-            <Button size="small" onClick={handleClick}>Get new quote</Button>
+            <Button size="small" onClick={handleClick} id='new-quote'>Get new quote</Button>
+            <Button size="small">
+                <a id='tweet-quote' href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`} target="_blank" rel="noopener noreferrer">
+                    Tweet quote
+                </a>
+            </Button>
         </CardActions>
         </Card>
       </div>
