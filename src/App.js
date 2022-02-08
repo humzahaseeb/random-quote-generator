@@ -1,9 +1,13 @@
 import React from 'react';
+import QuoteCard from './components/QuoteCard';
+import Heading from './components/Heading';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Heading />
+      <QuoteCard />
     </div>
   );
 }
