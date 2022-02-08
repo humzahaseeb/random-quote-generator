@@ -10,7 +10,7 @@ const Heading = () => {
                 marginTop: '7.5rem',
         }}
     >
-        Random Quote Generator
+        Breaking Bad Random Quote Generator
     </Typography>
   );
 };

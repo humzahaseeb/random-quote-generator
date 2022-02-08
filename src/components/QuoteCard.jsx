@@ -20,6 +20,17 @@ const QuoteCard = () => {
         .catch(error => console.log(error));
     }, []);
 
+    function handleClick() {
+        fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes')
+        .then(response => response.json())
+        .then(data => {
+            setQuote(data[0].quote);
+            setAuthor(data[0].author);
+        })
+        .catch(error => console.log(error));
+    }
+
+
 
   return(
       <div
@@ -36,7 +47,7 @@ const QuoteCard = () => {
             variant="outlined"
         >
         <CardContent>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            <Typography>
                 {quote}
             </Typography>
             <Typography variant="h5" component="div">
@@ -44,7 +55,7 @@ const QuoteCard = () => {
             </Typography>
         </CardContent>
         <CardActions>
-            <Button size="small">Learn More</Button>
+            <Button size="small" onClick={handleClick}>Get new quote</Button>
         </CardActions>
         </Card>
       </div>
