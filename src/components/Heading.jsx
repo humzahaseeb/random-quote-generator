@@ -1,18 +1,15 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import header from '../img/header.png';
 
 const Heading = () => {
   return (
-    <Typography
-        variant='h3'
-        style={{display: 'flex',
-                justifyContent:'center',
-                marginTop: '7.5rem',
-                color: '#fff',
-        }}
-    >
-        Breaking Bad Quote Generator
-    </Typography>
+    <div style={{display: 'flex', justifyContent: 'center', marginTop: '5rem'}}>
+      <img
+        src={header}
+        alt='heading'
+        style={{width: '20%'}}
+      />
+     </div>
   );
 };
 

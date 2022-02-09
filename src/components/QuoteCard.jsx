@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 const QuoteCard = () => {
 
@@ -50,28 +51,47 @@ const QuoteCard = () => {
             variant="outlined"
         >
             <CardContent>
-                <Typography id='text' variant="h5">
-                    {quote}
+
+                <Typography
+                    id='text'
+                    variant="h5"
+                    style={{
+                        fontStyle: 'italic',
+                        fontWeight: 500,
+                    }}
+                >
+                 <FormatQuoteIcon fontSize='large'/>   {quote}
                 </Typography>
-                <br />
-                <Typography id='author' variant='h6'>
-                    - {author}
+
+                <Typography
+                    id='author'
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        fontSize: '1.1rem',
+                        marginTop: '1rem',
+                        color: '#295f4e',
+                        fontWeight: 600,
+                    }}
+                >
+                    ~ {author}
                 </Typography>
             </CardContent>
 
             <CardActions>
                 <Button
-                    size="large"
+                    size="medium"
                     onClick={handleClick}
                     id='new-quote'
                     variant="contained"
-                    color="secondary"
+                    style={{backgroundColor: '#295f4e'}}
                 >
                     New Quote
                 </Button>
                 <Button
-                    size="large"
+                    size="medium"
                     variant="contained"
+                    style={{backgroundColor: '#295f4e'}}
                 >
                     <a
                         id='tweet-quote'
@@ -79,9 +99,7 @@ const QuoteCard = () => {
                         target="_blank" rel="noopener noreferrer"
                         style={{textDecoration: 'none', color: 'white'}}
                     >
-                        <TwitterIcon
-                            fontSize='small'
-                            style={{display: 'flex', alignItems: 'center', margin: '0.2rem'}}/>
+                     Tweet  <TwitterIcon fontSize='v-small'/>
                     </a>
                 </Button>
             </CardActions>
