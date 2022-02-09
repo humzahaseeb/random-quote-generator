@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 const QuoteCard = () => {
 
@@ -44,25 +45,46 @@ const QuoteCard = () => {
                     marginTop: '2rem',
                     width: '50%',
                     height: '50%',
+                    padding: '1rem',
                 }}
             variant="outlined"
         >
-        <CardContent>
-            <Typography id='text'>
-                {quote}
-            </Typography>
-            <Typography variant="h5" component="div" id='author'>
-                {author}
-            </Typography>
-        </CardContent>
-        <CardActions>
-            <Button size="small" onClick={handleClick} id='new-quote'>Get new quote</Button>
-            <Button size="small">
-                <a id='tweet-quote' href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`} target="_blank" rel="noopener noreferrer">
-                    Tweet quote
-                </a>
-            </Button>
-        </CardActions>
+            <CardContent>
+                <Typography id='text' variant="h5">
+                    {quote}
+                </Typography>
+                <br />
+                <Typography id='author' variant='h6'>
+                    - {author}
+                </Typography>
+            </CardContent>
+
+            <CardActions>
+                <Button
+                    size="large"
+                    onClick={handleClick}
+                    id='new-quote'
+                    variant="contained"
+                    color="secondary"
+                >
+                    New Quote
+                </Button>
+                <Button
+                    size="large"
+                    variant="contained"
+                >
+                    <a
+                        id='tweet-quote'
+                        href={`https://twitter.com/intent/tweet?text=${quote} - ${author}`}
+                        target="_blank" rel="noopener noreferrer"
+                        style={{textDecoration: 'none', color: 'white'}}
+                    >
+                        <TwitterIcon
+                            fontSize='small'
+                            style={{display: 'flex', alignItems: 'center', margin: '0.2rem'}}/>
+                    </a>
+                </Button>
+            </CardActions>
         </Card>
       </div>
   );
