@@ -43,12 +43,13 @@ const QuoteCard = () => {
       >
         <Card
             sx={{
-                    marginTop: '2rem',
+                    margin: '2rem',
                     width: '50%',
                     height: '50%',
                     padding: '1rem',
                 }}
             variant="outlined"
+            id='quote-card'
         >
             <CardContent>
 
